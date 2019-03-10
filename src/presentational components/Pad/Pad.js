@@ -1,12 +1,16 @@
 import React from 'react'
 
-const Pad = (props) => {
-    const letter = props.letter
+const Pad = props => {
     return(
         <div>
-            <button id={props.sound} className="drum-pad" onClick={document.getElementById({letter}).play()}>
-                {letter}
-                <audio id={props.letter} className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>
+            <button id={props.id} className="drum-pad" onClick={props.playSound}>
+                {props.letter}
+                <audio 
+                ref={props.reference}
+                id={props.letter} 
+                className="clip" 
+                src={props.sound}>
+                </audio>
             </button>
         </div>
     )
