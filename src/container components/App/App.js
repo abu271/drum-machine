@@ -3,14 +3,27 @@ import './App.css';
 import Display from '../../presentational components/Display/Display'
 import Pad from '../../presentational components/Pad/Pad'
 
+// petercr drum machine (FOR HELP)
+// state should contain and sound URL and sound name for the "display" component
+
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick = () => this.state.clap.play()
+
   render() {
     return (
       <div id="drum-machine" className="App">
         <div id="display">
           <Display />
         </div>
-        <Pad sound="1" letter={"Q"}>
+        <Pad sound="1" letter={"Q"} onClick={this.handleClick}>
         </Pad>
         <Pad sound="2" letter={"W"}>
         </Pad>
