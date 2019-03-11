@@ -17,8 +17,23 @@ const data = [
 
 class Pad extends Component {
 
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeydown)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeydown)
+  }
+
+  handleKeydown = event => {
+    if(event.keyCode === this.props.letter.charCodeAt()) {
+      this.handleClick()
+    }
+  }
+
   handleClick = () => {
     this.audio.play()
+    this.props.handleDisplay(this.props.id)
     this.audio.currentTime = 0
   }
 
@@ -45,6 +60,12 @@ class App extends Component {
     }
   }
 
+  handleDisplay = display => {
+    this.setState({
+      display
+    })
+  }
+
   render() {
     return (
       <div id="drum-machine" className="App">
@@ -54,6 +75,7 @@ class App extends Component {
 
         {data.map(data => (
           <Pad
+            handleDisplay={this.handleDisplay}
             id={data.id} 
             letter={data.letter}
             sound={data.src}
@@ -64,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
