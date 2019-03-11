@@ -16,11 +16,17 @@ const data = [
 ]
 
 class Pad extends Component {
+
+  handleClick = () => {
+    this.audio.play()
+  }
+
   render() {
     return (
       <button id={this.props.id} className="drum-pad" onClick={this.handleClick}>
         {this.props.letter}
         <audio
+          ref={ref => this.audio=ref}
           id={this.props.letter}
           className="clip"
           src={this.props.sound}>
@@ -36,11 +42,6 @@ class App extends Component {
     this.state = {
 
     }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick = () => {
-    document.getElementById(data[1].letter).play()
   }
 
   render() {
@@ -52,7 +53,6 @@ class App extends Component {
 
         {data.map(data => (
           <Pad
-            onClick={this.handleClick}
             id={data.id} 
             letter={data.letter}
             sound={data.src}
