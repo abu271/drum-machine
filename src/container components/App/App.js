@@ -19,6 +19,7 @@ class Pad extends Component {
 
   handleClick = () => {
     this.audio.play()
+    this.audio.currentTime = 0
   }
 
   render() {
@@ -40,7 +41,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      display: "Hey there, press or click a key!"
     }
   }
 
@@ -48,7 +49,7 @@ class App extends Component {
     return (
       <div id="drum-machine" className="App">
         <div id="display">
-          <Display />
+          <Display display={this.state.display}/>
         </div>
 
         {data.map(data => (
