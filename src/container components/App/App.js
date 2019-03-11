@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Display from '../../presentational components/Display/Display'
-import Pad from '../../presentational components/Pad/Pad'
+
 
 const data = [
   { id: 'snare', letter: 'Q', src: 'https://www.myinstants.com/media/sounds/snare.mp3' },
@@ -15,6 +15,21 @@ const data = [
   { id: 'laser', letter: 'C', src: 'http://www.sa-matra.net/sounds/starcontrol/Umgah-Backzip.wav' },
 ]
 
+class Pad extends Component {
+  render() {
+    return (
+      <button id={this.props.id} className="drum-pad" onClick={this.handleClick}>
+        {this.props.letter}
+        <audio
+          id={this.props.letter}
+          className="clip"
+          src={this.props.sound}>
+        </audio>
+      </button>
+    )
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -25,8 +40,7 @@ class App extends Component {
   }
 
   handleClick = () => {
-    this.audio.play()
-    this.audio.currentTime = 0
+    document.getElementById(data[1].letter).play()
   }
 
   render() {
@@ -38,11 +52,10 @@ class App extends Component {
 
         {data.map(data => (
           <Pad
-            playSound={this.handleClick} 
+            onClick={this.handleClick}
             id={data.id} 
             letter={data.letter}
             sound={data.src}
-            reference={ref => this.audio = ref}
           />
         ))}
       </div>
