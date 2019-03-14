@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App.scss'
 import Display from '../../presentational components/Display/Display'
 
 
@@ -28,6 +28,7 @@ class Pad extends Component {
   handleKeydown = event => {
     if(event.keyCode === this.props.letter.charCodeAt()) {
       this.handleClick()
+      this.setState({active: !this.state.active})
     }
   }
 
@@ -56,7 +57,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      display: "Hey there, press or click a key!"
+      display: "Hey there, press or click a key!",
+      active: false
     }
   }
 
@@ -68,19 +70,20 @@ class App extends Component {
 
   render() {
     return (
-      <div id="drum-machine" className="App">
+      <div id="drum-machine">
         <div id="display">
           <Display display={this.state.display}/>
         </div>
-
-        {data.map(data => (
-          <Pad
-            handleDisplay={this.handleDisplay}
-            id={data.id} 
-            letter={data.letter}
-            sound={data.src}
-          />
-        ))}
+        <div id="drum-pads">
+          {data.map(data => (
+            <Pad
+              handleDisplay={this.handleDisplay}
+              id={data.id}
+              letter={data.letter}
+              sound={data.src}
+            />
+          ))}
+        </div>
       </div>
     )
   }
