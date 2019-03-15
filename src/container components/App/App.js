@@ -28,7 +28,6 @@ class Pad extends Component {
   handleKeydown = event => {
     if(event.keyCode === this.props.letter.charCodeAt()) {
       this.handleClick()
-      this.setState({active: !this.state.active})
     }
   }
 
@@ -57,8 +56,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      display: "Hey there, press or click a key!",
-      active: false
+      display: "Hey there, press or click a key!"
     }
   }
 
