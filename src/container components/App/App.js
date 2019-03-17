@@ -56,7 +56,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      display: "Hey there, press or click a key!"
+      display: "Press or click a key!"
     }
   }
 

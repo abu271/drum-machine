@@ -1,20 +1,26 @@
-
 #drum-machine {
-  text-align: center;
+  background-color:#FF7560;
+  align-self: center;
+  width: 400px;
+  height: 430px;
+  margin: auto;
+  box-shadow: 0 0 10px black;
   #drum-pads {
     display: grid;
     grid-template-columns: repeat(3,100px);
     grid-template-rows: repeat(3,100px);
+    margin: 50px;
     button {
       border-radius: 25%;
       width: 100px;
       height: 100px;
       margin: 10px 0;
       box-shadow: 0 8px 6px -6px black;
-      background-color: #444;
+      background-color: rgba(83, 81, 81, 0.904);
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: 'Lilita One', cursive;
       font-size: 20px;
       color: rgba(255, 255, 255, 0.4);
       user-select: none;
@@ -27,13 +33,15 @@
       &:active {
         background-color: darken(#444, 10%);
         transform: scale(1.1);
-        transition: all .2s;
+        transition: all 0.2s;
       }
     }
-    .active {
-      background-color: darken(#444, 10%);
-      transform: scale(1.1);
-      transition: all .2s;
-    }
   }
+}
+
+#display {
+  text-align: center;
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 35px;
+  margin-top: 10px;
 }

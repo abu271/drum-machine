@@ -1,5 +1,3 @@
-import React from 'react'
-
-const Display = (props) => <p>{props.display}</p>
+const Display = props => props.display
 
 export default Display

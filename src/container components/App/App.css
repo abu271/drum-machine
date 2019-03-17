@@ -1,5 +1,13 @@
 #drum-machine {
-  text-align: center;
+  background-color: #FF7560;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 400px;
+  height: 430px;
+  margin: auto;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
 }
 
 #drum-machine #drum-pads {
@@ -9,6 +17,7 @@
       grid-template-columns: repeat(3, 100px);
   -ms-grid-rows: (100px)[3];
       grid-template-rows: repeat(3, 100px);
+  margin: 50px;
 }
 
 #drum-machine #drum-pads button {
@@ -18,7 +27,7 @@
   margin: 10px 0;
   -webkit-box-shadow: 0 8px 6px -6px black;
           box-shadow: 0 8px 6px -6px black;
-  background-color: #444;
+  background-color: rgba(83, 81, 81, 0.904);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,6 +37,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: 'Lilita One', cursive;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.4);
   -webkit-user-select: none;
@@ -45,15 +55,14 @@
   background-color: #2b2b2b;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
-#drum-machine #drum-pads .active {
-  background-color: #2b2b2b;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+#display {
+  text-align: center;
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 35px;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=App.css.map */
