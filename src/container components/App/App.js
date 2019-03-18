@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.scss'
 import Display from '../../presentational components/Display/Display'
 
-
 const data = [
   { id: 'snare', letter: 'Q', src: 'https://www.myinstants.com/media/sounds/snare.mp3' },
   { id: 'bass 1', letter: 'W', src: 'https://www.myinstants.com/media/sounds/bass-drum.mp3' },
