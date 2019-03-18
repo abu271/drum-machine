@@ -1,4 +1,4 @@
-# Drum macchine 
+# Drum machine 
 ![Drumming gif](https://media.giphy.com/media/4Lyd8tJk410iI/giphy.gif)
 ### Description:
 Get ready to rock some awesome beats. Click on the keypads to play a sounds or press the corresponding letter 
