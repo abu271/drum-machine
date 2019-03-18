@@ -1,5 +1,5 @@
 # Drum macchine 
-![Drumming gif](https://giphy.com/gifs/loop-animal-drums-4Lyd8tJk410iI)
+![Drumming gif](https://media.giphy.com/media/4Lyd8tJk410iI/giphy.gif)
 ### Description:
 Get ready to rock some awesome beats. Click on the keypads to play a sounds or press the corresponding letter 
 on your keyboard. 
