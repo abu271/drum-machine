@@ -9,8 +9,6 @@ This web app used the following technologies:
 * HTML
 * SASS
 * React.js
-* Babel
-* Webpack
 
-### Link:
+### Demo:
 [Click here](https://reactdrum.netlify.com/)
